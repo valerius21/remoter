@@ -1,0 +1,18 @@
+remotes:
+  - host: 192.168.1.100
+    user: root
+    password: 123456
+
+workflows:
+  - name: echo
+    steps:
+      - name: echo test
+        command: |
+          echo "test"
+
+  - name: read file
+    steps:
+      - name: read file
+        command: |
+          echo "test" > /tmp/test.txt
+          cat /tmp/test.txt
