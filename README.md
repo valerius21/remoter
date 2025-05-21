@@ -1,6 +1,6 @@
 # remoter
 
-A simple Python application.
+MRE for remote execution of workflows.
 
 ## Structure
 
