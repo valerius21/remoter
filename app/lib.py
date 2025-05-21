@@ -29,14 +29,17 @@ def read_config(config_path: Path):
         config = yaml.safe_load(f)
     return _substitute_env_vars(config)
 
-def get_config():
-    config_path = Path(__file__).parent.parent / "config.yml"
+def get_config(config_path=None):
+    if config_path is None:
+        config_path = Path(__file__).parent.parent / "config.yml"
+    else:
+        config_path = Path(config_path)
     return read_config(config_path)
 
-def get_remotes():
-    config = get_config()
+def get_remotes(config_path=None):
+    config = get_config(config_path)
     return config["remotes"]
 
-def get_workflows():
-    config = get_config()
+def get_workflows(config_path=None):
+    config = get_config(config_path)
     return config["workflows"]
